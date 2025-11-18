@@ -23,7 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bind_param("ssssss", $name,$email,$password_hash,$role,$phone,$location);
 
         if ($stmt->execute()) {
+
+            // 🌱 Auto-create reward wallet for the new user
+            $newUserId = $stmt->insert_id;
+            $wallet = $conn->prepare("INSERT INTO reward_wallets (user_id, balance) VALUES (?, 0)");
+            $wallet->bind_param("i", $newUserId);
+            $wallet->execute();
+
             $success = "Registration successful! You may login.";
+
         } else {
             $errors[] = "Email already registered.";
         }
