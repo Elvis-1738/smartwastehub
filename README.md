@@ -67,7 +67,7 @@ smartwastehub/
 │   │   ├── register.php
 │   │   └── logout.php
 │   ├── config.php
-│   └── utils.php
+│
 ├── frontend/
 │   ├── dashboard_household.php
 │   ├── dashboard_collector.php
