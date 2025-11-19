@@ -118,3 +118,4 @@ smartwastehub/
 ---
 
 This README summarises the SmartWasteHub project for assessment and deployment, providing full setup instructions, system overview, and SDLC alignment.
+A more in-depth study into the steps of the SDLC executed are included in the file sdlc.md 
