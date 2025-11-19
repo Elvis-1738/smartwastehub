@@ -9,7 +9,7 @@ if (empty($_SESSION['user_id']) || $_SESSION['user_role'] !== 'collector') {
 $pickup_id = $_GET['id'] ?? 0;
 
 $stmt = $conn->prepare("
-    SELECT pr.*, wc.name AS category_name, wc.reward_per_kg, u.name AS user_name
+    SELECT pr.*, wc.name AS category_name, wc.reward_per_kg, u.name AS user_name, u.id AS household_id
     FROM pickup_requests pr
     JOIN waste_categories wc ON pr.category_id = wc.id
     JOIN users u ON pr.user_id = u.id
@@ -34,26 +34,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && $pickup) {
     } else {
         // Calculate credits
         $credits = $weight * $pickup['reward_per_kg'];
+        $user_id = $pickup['household_id'];
 
-        // 1) Update pickup status + weight
+        // 1️⃣ Update pickup status + weight
         $update = $conn->prepare("UPDATE pickup_requests SET status='completed', weight_kg=? WHERE id=?");
         $update->bind_param("di", $weight, $pickup_id);
         $update->execute();
 
-        // 2) Update reward wallet balance
+        // 2️⃣ Ensure wallet exists for the user
+        $createWallet = $conn->prepare("
+            INSERT INTO reward_wallets (user_id, balance)
+            SELECT ?, 0
+            WHERE NOT EXISTS (SELECT 1 FROM reward_wallets WHERE user_id=?)
+        ");
+        $createWallet->bind_param("ii", $user_id, $user_id);
+        $createWallet->execute();
+
+        // 3️⃣ Update wallet balance
         $wallet = $conn->prepare("UPDATE reward_wallets SET balance = balance + ? WHERE user_id=?");
-        $wallet->bind_param("di", $credits, $pickup['user_id']);
+        $wallet->bind_param("di", $credits, $user_id);
         $wallet->execute();
 
-        // 3) Log the transaction
+        // 4️⃣ Log reward transaction
         $log = $conn->prepare("
             INSERT INTO reward_transactions (user_id, pickup_id, credits, type)
             VALUES (?, ?, ?, 'earn')
         ");
-        $log->bind_param("iid", $pickup['user_id'], $pickup_id, $credits);
+        $log->bind_param("iid", $user_id, $pickup_id, $credits);
         $log->execute();
 
-        $success = "Pickup completed! User earned {$credits} recycling credits.";
+        $success = "Pickup completed! Household earned {$credits} recycling credits.";
     }
 }
 

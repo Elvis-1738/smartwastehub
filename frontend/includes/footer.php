@@ -1,11 +1,11 @@
-</div> <!-- end container -->
+</div> <!-- container -->
 
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    <small>&copy; <?php echo date('Y'); ?> SmartWasteHub. All rights reserved.</small>
+<footer class="glass-footer text-center py-3 mt-5">
+    <small class="text-white-50">
+        © <?= date('Y'); ?> SmartWasteHub. All rights reserved.
+    </small>
 </footer>
 
-<!-- BOOTSTRAP JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

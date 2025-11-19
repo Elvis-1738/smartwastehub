@@ -13,7 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    if ($user && password_verify($password, $user["password_hash"])) {
+    // Admin can log in using plain password
+    if ($user && (
+        ($user["role"] === "admin" && $password === $user["password_hash"]) ||
+        password_verify($password, $user["password_hash"])
+    )) {
         $_SESSION["user_id"] = $user["id"];
         $_SESSION["user_name"] = $user["name"];
         $_SESSION["user_role"] = $user["role"];

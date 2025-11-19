@@ -1,8 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,36 +5,31 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartWasteHub</title>
 
-    <!-- BOOTSTRAP CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CUSTOM CSS -->
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main Style -->
     <link rel="stylesheet" href="/smartwastehub/css/style.css">
 </head>
 
-<body class="bg-light">
+<body class="glass-body">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="/smartwastehub/frontend/index.php">Smart Waste Hub</a>
+<nav class="navbar glass-nav px-4 py-3">
+    <span class="navbar-brand fw-bold text-white fs-4">
+        <i class="bi bi-recycle me-2"></i> Smart Waste Hub
+    </span>
 
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div id="navMenu" class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                <?php if (!empty($_SESSION['user_id'])): ?>
-                    <li class="nav-item"><a class="nav-link" href="/smartwastehub/backend/auth/logout.php">Logout</a></li>
-                <?php else: ?>
-                    <li class="nav-item"><a class="nav-link" href="/smartwastehub/backend/auth/login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/smartwastehub/backend/auth/register.php">Register</a></li>
-                <?php endif; ?>
-
-            </ul>
-        </div>
+    <div>
+        <?php if (!empty($_SESSION['user_id'])): ?>
+            <a href="/smartwastehub/backend/auth/logout.php" 
+               class="btn btn-logout">
+               <i class="bi bi-box-arrow-right me-1"></i> Logout
+            </a>
+        <?php endif; ?>
     </div>
 </nav>
 
-<div class="container my-4">
+<div class="container py-5">

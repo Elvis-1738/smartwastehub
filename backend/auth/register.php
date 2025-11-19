@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <select name="role" class="form-control mb-3">
                     <option value="household">Household / SME</option>
                     <option value="collector">Waste Collector</option>
+                    <option value="admin">Administrator</option>
                 </select>
 
                 <label class="form-label">Phone</label>
