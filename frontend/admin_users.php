@@ -1,3 +1,22 @@
+<!--
+  users.php
+  ---------
+  This admin page lists all registered users within the Smart Waste Hub system.
+
+  Key functions:
+  - Restricts access to authenticated admin users only.
+  - Retrieves essential user details from the database, including:
+        • Name
+        • Email
+        • Role (admin, collector, household)
+        • Phone number
+        • Location
+  - Displays user data in a structured, sortable table for easier management.
+  - Helps administrators monitor all system users at a glance.
+
+  Part of the admin dashboard for managing platform users.
+-->
+
 <?php
 require_once __DIR__ . '/../backend/config.php';
 
