@@ -2,7 +2,7 @@
  
 <!--
   admin_requests.php
-  -------------------
+  --------------------
   This page displays a complete list of all waste pickup requests for the admin.
 
   Key functions:
