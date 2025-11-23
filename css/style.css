@@ -1,0 +1,169 @@
+/* --------------------------------------------------- */
+/* GLOBAL */
+/* --------------------------------------------------- */
+
+body, .glass-body {
+    background: #f8f9fa !important; /* clean light background */
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+/* --------------------------------------------------- */
+/* NAVBAR */
+/* --------------------------------------------------- */
+
+.glass-nav {
+    background: #ffffff;
+    border-bottom: 1px solid #e3e3e3;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-radius: 0;
+}
+
+.navbar-brand {
+    color: #28a745 !important;
+    font-weight: 600;
+}
+
+/* Logout */
+.btn-logout {
+    background: #28a745 !important;
+    color: #fff !important;
+    border-radius: 20px;
+    padding: 6px 18px;
+}
+
+.btn-logout:hover {
+    background: #1f8736 !important;
+}
+
+/* --------------------------------------------------- */
+/* HERO SECTION */
+/* --------------------------------------------------- */
+
+.hero-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 60px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+}
+
+.hero-title span {
+    color: #28a745 !important; 
+}
+
+.hero-subtext {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Buttons */
+.btn-login {
+    background: #0d6efd;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 28px;
+}
+
+.btn-login:hover {
+    background: #0a58ca;
+}
+
+.btn-register {
+    background: #28a745;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 28px;
+}
+
+.btn-register:hover {
+    background: #1f8736;
+}
+
+/* --------------------------------------------------- */
+/* DASHBOARD CARDS */
+/* --------------------------------------------------- */
+
+.glass-card {
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: 0.2s ease-in-out;
+}
+
+.glass-card:hover {
+    transform: translateY(-3px);
+}
+
+/* --------------------------------------------------- */
+/* ACTION BUTTONS */
+/* --------------------------------------------------- */
+
+.action-btn {
+    border-radius: 20px;
+    font-size: 17px;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    color: #fff;
+}
+
+.btn-request {
+    background: #28a745;
+}
+
+.btn-request:hover {
+    background: #1f8736;
+}
+
+.btn-redeem {
+    background: #0d6efd;
+}
+
+.btn-redeem:hover {
+    background: #0a58ca;
+}
+
+/* --------------------------------------------------- */
+/* TABLE STYLE */
+/* --------------------------------------------------- */
+
+.table-glass {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.table-glass thead {
+    background: #e9f8ef;
+}
+
+.table-glass td, 
+.table-glass th {
+    color: #333 !important;
+}
+
+.table-glass tbody tr:hover {
+    background: #f3f3f3;
+}
+
+/* --------------------------------------------------- */
+/* FOOTER */
+/* --------------------------------------------------- */
+
+.footer-glass {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: #666;
+}
