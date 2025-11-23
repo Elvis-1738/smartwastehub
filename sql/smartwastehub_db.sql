@@ -66,7 +66,7 @@ CREATE TABLE `reward_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reward_items`
+-- Dumping data for table: `reward_items`
 --
 
 INSERT INTO `reward_items` (`id`, `name`, `cost_credits`, `created_at`) VALUES
