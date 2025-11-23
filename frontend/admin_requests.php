@@ -16,8 +16,6 @@
         • Recorded waste weight (if available)
   - Joins multiple tables: pickup_requests, waste_categories, and users.
   - Presents the results in a clean, formatted table for admin review.
-
-  This file is part of the Smart Waste Hub admin dashboard.
 -->
 
 <?php

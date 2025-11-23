@@ -1,3 +1,22 @@
+<!--
+  reward_transactions.php
+  -----------------------
+  Admin dashboard page for viewing all reward transactions in the system.
+
+  Responsibilities:
+  - Restricts access to admin users only.
+  - Fetches all reward transactions from the database, including:
+        • User who received or spent credits
+        • Associated pickup request ID
+        • Number of credits awarded or deducted
+        • Transaction type (earn or spend)
+        • Timestamp of the transaction
+  - Joins the reward_transactions table with users to display user names.
+  - Presents the data in a structured table for easy review and auditing.
+
+  Part of the Smart Waste Hub admin management module.
+-->
+
 <?php
 require_once __DIR__ . '/../backend/config.php';
 
