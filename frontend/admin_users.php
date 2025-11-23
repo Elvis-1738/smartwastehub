@@ -1,6 +1,6 @@
 <!--
   users.php
-  ---------
+  ----------
   This admin page lists all registered users within the Smart Waste Hub system.
 
   Key functions:
