@@ -1,4 +1,25 @@
 <!-- frontend\admin_requests.php -->
+ 
+<!--
+  admin_requests.php
+  -------------------
+  This page displays a complete list of all waste pickup requests for the admin.
+
+  Key functions:
+  - Ensures only authenticated admin users can access the page.
+  - Retrieves pickup request data from the database, including:
+        • Household (user) name
+        • Waste category
+        • Scheduled date and time slot
+        • Request status
+        • Assigned collector (if any)
+        • Recorded waste weight (if available)
+  - Joins multiple tables: pickup_requests, waste_categories, and users.
+  - Presents the results in a clean, formatted table for admin review.
+
+  This file is part of the Smart Waste Hub admin dashboard.
+-->
+
 <?php
 require_once __DIR__ . '/../backend/config.php';
 
