@@ -1,6 +1,6 @@
 <!--
   collector_available.php
-  ------------------------
+  -------------------------
   This page displays all pending pickup requests that are available for collectors
   to claim.
 
