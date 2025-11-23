@@ -1,3 +1,23 @@
+<!--
+  collector_available.php
+  ------------------------
+  This page displays all pending pickup requests that are available for collectors
+  to claim.
+
+  Key functions:
+  - Restricts access strictly to authenticated collectors.
+  - Fetches all pending waste pickup requests along with related household and
+    waste category details.
+  - Allows a collector to "claim" a pickup request:
+        • Marks the request as 'assigned'
+        • Links it to the logged-in collector
+        • Redirects with a confirmation message
+  - Presents the requests in a table format with a claim button for each entry.
+
+  Part of the collector dashboard for managing daily collection tasks.
+-->
+
+
 <?php
 require_once __DIR__ . '/../backend/config.php';
 
