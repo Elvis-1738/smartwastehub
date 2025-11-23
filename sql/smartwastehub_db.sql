@@ -1,5 +1,5 @@
 -- SmartWasteHub v1.0 – Final clean database schema by BSE25-9 (Nov 2025)
--- Only 3 tables: users, pickups, rewards → stable, lightweight, 100% working
+-- Only 3 tables: users, pickups, rewards → stable, lightweight, 100% working.
 
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
