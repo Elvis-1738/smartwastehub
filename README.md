@@ -38,7 +38,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Elvis-1738/smartwastehub.git
+   git clone https://github.com/elvis-kitonsa/smartwastehub.git
    ```
 2. Move the project folder into your Apache web root (`htdocs`).
 3. Import the database file `smartwastehub_db.sql` using phpMyAdmin.
